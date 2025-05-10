@@ -1,6 +1,10 @@
 package global;
 
-import ex2.*;
+
+import ex3.BubbleSort;
+import ex3.InsertionSort;
+import ex3.MergeSort;
+import ex3.SelectionSort;
 
 public class Teste {
 
@@ -10,14 +14,11 @@ public class Teste {
         BubbleSort bubbleSort = new BubbleSort();
         InsertionSort insertionSort = new InsertionSort();
         SelectionSort selectionSort = new SelectionSort();
-        Impressao impressao = new Impressao();
 
-        int[] vetor = {6,3,7,34,6,3,7,3,6,87,6};
+        int[] vetorInt = {6,3,7,34,6,3,7,3,6,87,6};
+        String[] vetorString = {"zoom","yacht","walter","boatarde"};
 
-        selectionSort.decrescente(vetor);
-
-        impressao.imprimirVetor(vetor);
-
+        bubbleSort.string(vetorString);
     }
 
 }
