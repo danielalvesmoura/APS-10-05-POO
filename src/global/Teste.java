@@ -1,24 +1,22 @@
 package global;
 
 
-import ex3.BubbleSort;
-import ex3.InsertionSort;
-import ex3.MergeSort;
-import ex3.SelectionSort;
+import ex5_2.*;
+import ex6.Torneio;
 
 public class Teste {
 
     public static void main(String[] args) {
 
-        MergeSort mergeSort = new MergeSort();
-        BubbleSort bubbleSort = new BubbleSort();
-        InsertionSort insertionSort = new InsertionSort();
-        SelectionSort selectionSort = new SelectionSort();
-
         int[] vetorInt = {6,3,7,34,6,3,7,3,6,87,6};
+        int[][] vetorMatriz = {{4,6,8,2,7,4,5}, {65,78,4152,1645,456,78,123,45}, {51561,594984,3212631,654564,489498}};
         String[] vetorString = {"zoom","yacht","walter","boatarde"};
 
-        bubbleSort.string(vetorString);
+        Torneio torneio = new Torneio();
+
+        int[] partidas = torneio.geraVetor();
+
+        System.out.println(torneio.maisAlta(partidas));
     }
 
 }
