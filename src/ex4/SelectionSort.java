@@ -3,7 +3,7 @@ package ex4;
 public class SelectionSort {
 
 
-    public static void padrao(int[] vetor, int n) {
+    public void padrao(int[] vetor, int n) {
         int menorIndice;
         for (int atual = 0; atual < n-1; atual++) {
             menorIndice = atual;
