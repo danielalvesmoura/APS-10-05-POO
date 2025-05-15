@@ -5,17 +5,17 @@ import java.util.Arrays;
 
 public class MergeSort {
 
-    int trocas = 0;
-
-    public int padrao(int[] vetorOriginal) {
+    public void padrao(int[] vetorOriginal) {
         int[] vetor = Arrays.copyOf(vetorOriginal,vetorOriginal.length);
 
-
+        if(Global.estaOrdenado(vetor)) {
+            return;
+        }
 
         MergeSort mergeSort = new MergeSort();
 
         int tamanho = vetor.length;
-        if (tamanho <= 1) return trocas;
+        if (tamanho <= 1) return ;
 
 
         int indiceMeio = tamanho/2;
@@ -44,12 +44,10 @@ public class MergeSort {
 
         padrao(vetorEsquerdo);
         padrao(vetorDireito);
-        trocas += mergeSort.mergePadrao(vetorEsquerdo,vetorDireito,vetor);
-
-        return trocas;
+        mergeSort.mergePadrao(vetorEsquerdo,vetorDireito,vetor);
     }
 
-    private int mergePadrao(int[] vetorEsquerdo, int[] vetorDireito, int[] vetor) {
+    private void mergePadrao(int[] vetorEsquerdo, int[] vetorDireito, int[] vetor) {
 
 
         int tamanho = vetor.length;
@@ -61,16 +59,18 @@ public class MergeSort {
 
 
         while (iEsquerda < tamanhoEsquerdo && iDireito < tamanhoDireito) {
+            if(Global.estaOrdenado(vetor)) {
+                return;
+            }
+
             if(vetorEsquerdo[iEsquerda] < vetorDireito[iDireito]) {
                 vetor[iTotal] = vetorEsquerdo[iEsquerda];
                 iTotal++;
                 iEsquerda++;
-                trocas++;
             } else {
                 vetor[iTotal] = vetorDireito[iDireito];
                 iTotal++;
                 iDireito++;
-                trocas++;
             }
         }
 
@@ -79,7 +79,6 @@ public class MergeSort {
             vetor[iTotal] = vetorEsquerdo[iEsquerda];
             iTotal++;
             iEsquerda++;
-            trocas++;
         }
 
 
@@ -87,10 +86,7 @@ public class MergeSort {
             vetor[iTotal] = vetorDireito[iDireito];
             iTotal++;
             iDireito++;
-            trocas++;
         }
-
-        return trocas;
     }
 
 
