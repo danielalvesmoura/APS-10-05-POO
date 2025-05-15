@@ -5,6 +5,8 @@ import ex8.Ordenacao.InsertionSort;
 import ex8.Ordenacao.MergeSort;
 import ex8.Ordenacao.SelectionSort;
 
+import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class Torneio {
@@ -38,11 +40,41 @@ public class Torneio {
 
     public void iniciaTorneio() {
         for(int i = 0; i < vetores.length; i++) {
-            vetores[i].bubbleIteracoes = bubbleSort.padrao(vetores[i].vetor);
-            vetores[i].insertionIteracoes = insertionSort.padrao(vetores[i].vetor);
-            vetores[i].mergeIteracoes = mergeSort.padrao(vetores[i].vetor);
-            vetores[i].selectionIteracoes = selectionSort.padrao(vetores[i].vetor);
+            vetores[i].tempos[0] = testaBubble(vetores[i].vetor);
+            vetores[i].tempos[1] = testaInsertion(vetores[i].vetor);
+            vetores[i].tempos[2] = testaMerge(vetores[i].vetor);
+            vetores[i].tempos[3] = testaSelection(vetores[i].vetor);
         }
     }
+
+    public long testaBubble(int[] vetor) {
+        long inicio = System.nanoTime();
+        bubbleSort.padrao(vetor);
+        long fim = System.nanoTime();
+        return fim - inicio;
+    }
+
+    public long testaInsertion(int[] vetor) {
+        long inicio = System.nanoTime();
+        insertionSort.padrao(vetor);
+        long fim = System.nanoTime();
+        return fim - inicio;
+    }
+
+    public long testaMerge(int[] vetor) {
+        long inicio = System.nanoTime();
+        mergeSort.padrao(vetor);
+        long fim = System.nanoTime();
+        return fim - inicio;
+    }
+
+    public long testaSelection(int[] vetor) {
+        long inicio = System.nanoTime();
+        selectionSort.padrao(vetor);
+        long fim = System.nanoTime();
+        return fim - inicio;
+    }
+
+
 
 }
