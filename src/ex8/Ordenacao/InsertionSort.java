@@ -4,11 +4,13 @@ import java.util.Arrays;
 
 public class InsertionSort {
 
-    public int padrao(int[] vetorOriginal) {
+    public void padrao(int[] vetorOriginal) {
         int[] vetor = Arrays.copyOf(vetorOriginal,vetorOriginal.length);
-        int trocas = 0;
 
         for (int i = 1; i < vetor.length; i++) {
+            if(Global.estaOrdenado(vetor)) {
+                return;
+            }
 
 
             int chave = vetor[i];
@@ -22,10 +24,8 @@ public class InsertionSort {
 
 
             vetor[j+1] = chave;
-            trocas++;
 
         }
-        return trocas;
     }
 
 }
