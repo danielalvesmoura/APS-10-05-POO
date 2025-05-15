@@ -8,10 +8,7 @@ public class Vetor {
     Util util = new Util();
 
     int[] vetor;
-    int bubbleIteracoes;
-    int insertionIteracoes;
-    int selectionIteracoes;
-    int mergeIteracoes;
+    long[] tempos = new long[4];
 
     public Vetor(int tipo, int tamanho) {
         vetor = new int[tamanho];
@@ -60,4 +57,5 @@ public class Vetor {
     public void setVetor(int[] vetor) {
         this.vetor = vetor;
     }
+
 }
