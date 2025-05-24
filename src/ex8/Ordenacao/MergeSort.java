@@ -55,9 +55,6 @@ public class MergeSort {
 
 
         while (iEsquerda < tamanhoEsquerdo && iDireito < tamanhoDireito) {
-            if(Global.estaOrdenado(vetor)) {
-                return;
-            }
 
             if(vetorEsquerdo[iEsquerda] < vetorDireito[iDireito]) {
                 vetor[iTotal] = vetorEsquerdo[iEsquerda];
