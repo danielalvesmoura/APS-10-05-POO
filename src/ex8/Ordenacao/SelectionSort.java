@@ -10,9 +10,6 @@ public class SelectionSort {
         int[] vetor = Arrays.copyOf(vetorOriginal,vetorOriginal.length);
         int menorIndice;
         for (int atual = 0; atual < vetor.length-1; atual++) {
-            if(Global.estaOrdenado(vetor)) {
-                return;
-            }
 
             menorIndice = atual;
             for (int i = atual + 1; i < vetor.length; i++) {
