@@ -8,10 +8,6 @@ public class MergeSort {
     public void padrao(int[] vetorOriginal) {
         int[] vetor = Arrays.copyOf(vetorOriginal,vetorOriginal.length);
 
-        if(Global.estaOrdenado(vetor)) {
-            return;
-        }
-
         MergeSort mergeSort = new MergeSort();
 
         int tamanho = vetor.length;
