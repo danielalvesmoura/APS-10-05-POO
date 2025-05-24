@@ -8,9 +8,6 @@ public class InsertionSort {
         int[] vetor = Arrays.copyOf(vetorOriginal,vetorOriginal.length);
 
         for (int i = 1; i < vetor.length; i++) {
-            if(Global.estaOrdenado(vetor)) {
-                return;
-            }
 
 
             int chave = vetor[i];
